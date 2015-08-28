@@ -2,6 +2,8 @@ require "rest-client"
 require "json"
 require "nfe/version"
 
+require "nfe/service_invoice"
+
 module Nfe
   @@api_key = ''
   @@company_id = ''
