@@ -1,6 +1,6 @@
-require "nfe/version"
 require "rest-client"
 require "json"
+require "nfe/version"
 
 module Nfe
   @@api_key = ''
