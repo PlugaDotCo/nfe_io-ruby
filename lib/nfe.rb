@@ -13,6 +13,7 @@ require "nfe/nfe_object"
 require "nfe/service_invoice"
 require "nfe/company"
 require "nfe/natural_people"
+require "nfe/legal_people"
 
 require "nfe/util"
 require "nfe/errors/nfe_error"
