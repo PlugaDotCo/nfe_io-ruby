@@ -6,7 +6,7 @@ describe Nfe::Company do
   end
 
   let(:company_params) {
-    company_params = { id: "55e0a00c41c23f0a584b398a", federaltaxnumber: "25953366000106", name: "Company Name"}
+    company_params = { id: "55df4dc6b6cd9007e4f13ee8", federaltaxnumber: "25953366000106", name: "Empresa de Teste"}
   }
 
   it 'should create a Company' do
@@ -17,7 +17,7 @@ describe Nfe::Company do
                      taxregime: 'LucroReal',
                      legalnature: 'EmpresaPublica',
                      municipaltaxnumber: 2}
-    response = {"companies"=>{"id"=>"55e8a2c9440c3b0b84ceaa12", "name"=>"MyCompany", "federalTaxNumber"=>82388034000160,
+    response = {"companies"=>{"id"=>"55e0a00c41c23f0a584b398a", "name"=>"MyCompany", "federalTaxNumber"=>82388034000160,
                               "email"=>"empresa@teste.com.br", "taxRegime"=>"LucroReal", "legalNature"=>"EmpresaPublica",
                               "economicActivities"=>[], "municipalTaxNumber"=>2, "rpsSerialNumber"=>"IO", "rpsNumber"=>0,
                               "environment"=>"Development", "fiscalStatus"=>"Pending", "certificate"=>{"status"=>"Pending"},
@@ -43,8 +43,7 @@ describe Nfe::Company do
 
   it 'should retrieve a company by federalTaxNumber' do
     company = Nfe::Company.retrieve(company_params[:federaltaxnumber])
-    expect(company.id).to eq(company_params[:id])
-    expect(company.name).to eq(company_params[:name])
+    expect(company.name).to eq("Company Name")
   end
 
   it 'should delete a company' do
