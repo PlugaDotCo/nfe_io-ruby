@@ -9,7 +9,7 @@ describe Nfe::Company do
     company_params = { id: "55e0a00c41c23f0a584b398a", federaltaxnumber: "25953366000106", name: "Company Name"}
   }
 
-  it 'should create a Company', wip: true do
+  it 'should create a Company' do
     company_params = {name: 'MyCompany',
                      federaltaxnumber: 54458287000127,
                      email: 'empresa@teste.com.br',

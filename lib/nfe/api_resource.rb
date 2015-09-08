@@ -23,7 +23,6 @@ module Nfe
 
       begin
         payload = params.to_json
-
         response = RestClient::Request.new(method: method, url: url, payload: payload,
                                            headers: {authorization: api_key,
                                                         content_type: 'application/json',

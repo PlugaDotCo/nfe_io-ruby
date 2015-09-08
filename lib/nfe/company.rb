@@ -16,7 +16,6 @@ module Nfe
     end
 
     def self.create_from(params)
-      # puts params["companies"]
       obj = self.new
       obj.reflesh_object(params["companies"])
     end
