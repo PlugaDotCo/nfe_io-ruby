@@ -59,10 +59,6 @@ module Nfe
       self.name.split('::')[-1]
     end
 
-    # def serialize_params
-    #   [:card]
-    # end
-
     def initialize()
       @values = {}
     end
