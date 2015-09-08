@@ -30,7 +30,7 @@ describe Nfe::ServiceInvoice do
     expect(nfe["borrower"]["name"]).to eq('Ricardo Caldeira')
   end
 
-  it 'should list all service invoices'do
+  it 'should list all service invoices' do
     service_invoices_list = Nfe::ServiceInvoice.list_all
     expect(service_invoices_list["totalResults"]).to be >= 1
     expect(service_invoices_list["serviceInvoices"].size).to be >= 1
@@ -45,13 +45,11 @@ describe Nfe::ServiceInvoice do
   end
 
   it 'should retrieve a ServiceInvoice' do
-    service_invoice = Nfe::ServiceInvoice.retrieve("55ef348b146dc70e4c09a6ce")
-    expect(service_invoice["id"]).to eq("55ef348b146dc70e4c09a6ce")
+    service_invoices_list = Nfe::ServiceInvoice.list_all
+    service_invoice_params = service_invoices_list["serviceInvoices"].first
+    service_invoice = Nfe::ServiceInvoice.retrieve(service_invoice_params["id"])
+    expect(service_invoice["id"]).to eq(service_invoice_params["id"])
     expect(service_invoice["rpsStatus"]).to eq("Normal")
-  end
-
-  it 'should send a email to Tomador' do
-    skip "To be implemented"
   end
 
   it 'should cancel a ServiceInvoice' do
@@ -60,6 +58,10 @@ describe Nfe::ServiceInvoice do
     service_invoice = service_invoices_list["serviceInvoices"].first
     response = Nfe::ServiceInvoice.delete(service_invoice["id"])
     expect(response).to eq("{}")
+  end
+
+  it 'should send a email to Tomador' do
+    skip "To be implemented"
   end
 
   it 'should retrieve a ServiceInvoice pdf file' do

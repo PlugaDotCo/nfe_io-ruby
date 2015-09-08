@@ -14,7 +14,7 @@ module Nfe
     def api_request(url, method, params=nil)
       url = "#{BASE_URL}#{url}"
       api_key = Nfe.access_keys
-      
+
       if method == :get && params
         params_encoded = encode(params)
         url = "#{url}?#{params_encoded}"
