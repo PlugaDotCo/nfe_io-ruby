@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'nfe/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "nfe"
+  spec.name          = "nfe-io"
   spec.version       = Nfe::VERSION
   spec.authors       = ["Ricardo Caldeira"]
   spec.email         = ["ricardo.nezz@gmail.com"]
