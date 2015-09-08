@@ -12,7 +12,7 @@ describe Nfe::LegalPeople do
     expect(natural_peoples_list.data.size).to be >= 0
   end
 
-  it 'should retrieve a LegalPeople', wip:true do
+  it 'should retrieve a LegalPeople' do
     customer_params = {borrower: { federalTaxNumber: '69919334000160', name: 'Empresa Teste', email: 'ricardo.nezz@mailinator.com',
                                    postalCode: '21231110', street: 'Rua Do Cliente', number: '1310', additionalInformation: 'AP 202',
                                    district: 'Centro', city_code: 4204202, city_name: 'Chapecó', city_state: 'SC' }}
