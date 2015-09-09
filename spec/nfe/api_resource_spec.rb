@@ -29,13 +29,13 @@ describe Nfe::ApiResource do
 
   it 'should create NfeError with error message and http code' do
     http_code = 400
-    json_message = {message: 'Error Message'}
+    json_message = {error: {type: '', message: 'Error Message'}}
     http_message = ''
     message = 'Error Message'
-    smartcoin_error = Nfe::NfeError.new(http_code, json_message, http_message, message)
-    expect(smartcoin_error.http_status).to eq(http_code)
-    expect(smartcoin_error.json_message).to eq(json_message)
-    expect(smartcoin_error.http_message).to eq(http_message)
-    expect(smartcoin_error.message).to eq(message)
+    nfe_error = Nfe::NfeError.new(http_code, json_message, http_message, message)
+    expect(nfe_error.http_status).to eq(http_code)
+    expect(nfe_error.json_message).to eq(json_message)
+    expect(nfe_error.http_message).to eq(http_message)
+    expect(nfe_error.message).to eq(message)
   end
 end

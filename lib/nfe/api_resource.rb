@@ -33,7 +33,7 @@ module Nfe
           rbody = JSON.parse(rbody)
           rbody = Util.symbolize_names(rbody)
 
-          raise NfeError.new(rcode, rbody, rcode, rbody[:message])
+          raise NfeError.new(rcode, rbody, rbody, rbody[:message])
         else
           raise e
         end
